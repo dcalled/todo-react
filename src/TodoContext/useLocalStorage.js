@@ -4,7 +4,7 @@ export function useLocalStorage(itemName, initialValue) {
 
     const [item, setItem] = React.useState(initialValue);
     const [loading, setLoading] =  React.useState(true);
-    const [error, setError] =  React.useState(false);
+    const [error, setError] =  React.useState('');
 
     React.useEffect(() => {
       setTimeout(() => {
@@ -23,7 +23,7 @@ export function useLocalStorage(itemName, initialValue) {
           setLoading(false);
         
         } catch(exception) {
-          setError(true);
+          setError('Error loading your TODOs');
         }
       }, 1500);
     }, []);
@@ -33,5 +33,5 @@ export function useLocalStorage(itemName, initialValue) {
       setItem(newItem);
     };
   
-    return {item, saveItem, loading, error};
+    return {item, saveItem, loading, error, setError};
   }
