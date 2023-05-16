@@ -24,9 +24,9 @@ export function TodoForm() {
 
     return (
         <form onSubmit={onSubmit}>
-            <label>Escribe tu nuevo TODO</label>
+            <label>Create a new task</label>
             <textarea
-                placeholder="Cortar cebolla para el almuerzo"
+                placeholder="Enter task here..."
                 value={newTodoValue}
                 onChange={onChange}
             />
@@ -35,11 +35,11 @@ export function TodoForm() {
                     type="button"
                     className="TodoForm-button TodoForm-button--cancel"
                     onClick={onCancel}
-                >Cancelar</button>
+                >Cancel</button>
                 <button
                     type="submit"
                     className="TodoForm-button TodoForm-button--add"
-                >Añadir</button>
+                >Add</button>
             </div>
         </form>
     );
